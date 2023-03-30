@@ -156,65 +156,7 @@ public class Polynomial {
         }while(tmp != null);
     }
     
-    public static void additionPoly(List p1, List p2) {// untuk penjumlahan ke dua polinomial
-        Node tmp1 = p1.head;
-        Node tmp2 = p2.head;
-        
-        List linkedList = new List();
-        int coefSuku, expSuku;
-        
-        do{
-            
-            while(tmp2 != null){
-                if(tmp1.exponen == tmp2.exponen){
-//                    System.out.print(tmp1.coef + tmp2.coef + "x" + tmp1.exponen);
-                    coefSuku = tmp1.coef + tmp2.coef;
-                    expSuku = tmp1.exponen;
-                    add(coefSuku, expSuku, linkedList);
-                }else{
-                    continue;
-                }
-                add(tmp1.coef, tmp1.exponen, linkedList);
-                add(tmp2.coef, tmp2.exponen, linkedList);
-                tmp2 = tmp2.next;
-              
-            }
-      
-            tmp1 = tmp1.next;
-            tmp2 = p2.head;
-        } while(tmp1 != null);
-        linkedList.print();
-    }
     
-    public static void subtractionPoly(List p1, List p2) {// untuk pengurangan ke dua polinomial
-        Node tmp1 = p1.head;
-        Node tmp2 = p2.head;
-        
-        List linkedList = new List();
-        int coefSuku, expSuku;
-        
-        do{
-            
-            while(tmp2 != null){
-                if(tmp1.exponen == tmp2.exponen){
-//                    System.out.print(tmp1.coef + tmp2.coef + "x" + tmp1.exponen);
-                    coefSuku = tmp1.coef - tmp2.coef;
-                    expSuku = tmp1.exponen;
-                    add(coefSuku, expSuku, linkedList);
-                }else{
-                    coefSuku = tmp2.coef;
-                    expSuku = tmp2.exponen;
-                    add(coefSuku, expSuku, linkedList);
-                }
-                tmp2 = tmp2.next;
-              
-            }
-      
-            tmp1 = tmp1.next;
-            tmp2 = p2.head;
-        } while(tmp1 != null);
-        linkedList.print();
-    }
     
     public static void main(String args[]) {
         // TODO code application logic here
@@ -236,8 +178,6 @@ public class Polynomial {
         
         p1.print();
         p2.print();
-        
-        additionPoly(p1, p2);
 //        subtractionPoly(p1, p2);
     }
 }
