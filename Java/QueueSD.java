@@ -7,8 +7,7 @@
  *
  * @author Krista
  */
-public class StackSD {
-    
+public class QueueSD {
     public static class Node{
         private int value;
         private Node next, prev;
@@ -20,41 +19,39 @@ public class StackSD {
         }
     }
     
-    public static class Stack{
+    public static class Queue{
+        private Node front, rear;
         private int count = 0;
-        private Node first, last;
         
-        
-        public Stack() {
-            first = last = null;
+        public Queue(){
+            front = rear = null;
         }
         
-        public void push(int value){
+        public void queue(int value){
             Node node = new Node(value);
             
             if(isEmpty()){
-                first = node;
-                last = node;
+                front = rear = node;
             } else {
-                last.next = node;
-                node.prev = last;
-                last = node;
+                rear.next = node;
+                node.prev = rear;
+                rear = node;
             }
-            count++;
+            count++;    
         }
         
-        public int pop(){
-            Node tmp = last;
+        public int dequeue(){
             
-            int value = tmp.value;
+            int value = front.value;
+            
             if(isEmpty()){
                 System.out.println("No data");
+                
                 return 0;
             }
             
-            last = tmp.prev;
-            tmp = null;
-            last.next = null;
+            front = front.next;
+            front.next.prev = null;
             
             
             return value;
@@ -69,7 +66,7 @@ public class StackSD {
         }
         
         public void print(){
-            Node tmp = first;
+            Node tmp = front;
             
             while(tmp != null){
                 System.out.print(tmp.value + " ");
@@ -84,28 +81,23 @@ public class StackSD {
      */
     public static void main(String args[]) {
         // TODO code application logic here
-        Stack stack = new Stack();
         
-        stack.push(1);
-        stack.push(2);
-        stack.push(3);
-        stack.push(4);
-        stack.push(5);
+        Queue q = new Queue();
         
-        stack.push(1);
-        stack.push(2);
-        stack.push(3);
+        q.queue(1);
+        q.queue(2);
+        q.queue(3);
+        q.queue(4);
+        q.queue(5);
         
-        System.out.println("Length: " + stack.length());
-        stack.print();
-        
+        System.out.println(q.length());
+        q.print();
         System.out.println();
         
-        System.out.println("Pop: " + stack.pop());
-        System.out.println("Pop: " + stack.pop());
-        System.out.println("Pop: " + stack.pop());
-        
-        System.out.println("Length: " + stack.length());
-        stack.print();
+        System.out.println("Dequeue: " + q.dequeue());
+        System.out.println("Dequeue: " + q.dequeue());
+        System.out.println("Dequeue: " + q.dequeue());
+        q.print();
+
     }
 }
