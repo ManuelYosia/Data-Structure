@@ -7,6 +7,9 @@
  *
  * @author Krista
  */
+
+//Link video ketika berjalan
+// https://drive.google.com/drive/folders/1E1xbNhgjCtagCWi-AhM0rgSHQ7lK6sUc?usp=share_link
 public class QueueSD {
     public static class Node{
         private int value;
@@ -41,18 +44,21 @@ public class QueueSD {
         }
         
         public int dequeue(){
-            
-            int value = front.value;
+            Node tmp = front;
+            int value = tmp.value;
             
             if(isEmpty()){
                 System.out.println("No data");
                 
                 return 0;
+            }else if(tmp.next != null){
+                front = tmp.next;
+                tmp.prev = null;
+                count--;
+            }else{
+                front = rear = null;
+                count--;
             }
-            
-            front = front.next;
-            front.next.prev = null;
-            
             
             return value;
         }

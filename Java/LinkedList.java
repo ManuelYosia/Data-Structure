@@ -7,6 +7,10 @@ import java.util.Scanner;
  *
  * @author Krista
  */
+
+//Link video untuk membuktikan jika program sudah berjalan dengan baik
+// https://drive.google.com/drive/folders/1BJLSbm48dH33g_e82N2KlBNWh4VgTbL5?usp=share_link
+
 public class LinkedList {
     
     

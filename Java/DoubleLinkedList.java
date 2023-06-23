@@ -7,6 +7,9 @@
  *
  * @author Krista
  */
+
+//Link video sebagai bukti jika program berjalan dengan baik
+// https://drive.google.com/drive/folders/1BQa5YWPfX9BJX9YEBUaDqZFaqKv8jbgX?usp=share_link
 public class DoubleLinkedList {
 
     /**

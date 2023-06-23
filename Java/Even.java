@@ -10,6 +10,10 @@ import java.util.Scanner;
  *
  * @author Krista
  */
+
+// Link video untuk melihat apakah program sudah berjalan dengan baik
+// https://drive.google.com/drive/folders/1BFIpm3e2pIqftQDvRBK96UncbxDVTmhc?usp=share_link
+
 public class Even {
 
     /**
